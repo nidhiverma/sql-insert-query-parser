@@ -347,16 +347,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  5
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   22
+#define YYLAST   26
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  12
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  6
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  9
+#define YYNRULES  11
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  26
+#define YYNSTATES  29
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -402,7 +402,8 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     6,    17,    25,    29,    31,    35,    37
+       0,     0,     3,     6,    17,    25,    29,    31,    35,    39,
+      41,    43
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
@@ -411,13 +412,15 @@ static const yytype_int8 yyrhs[] =
       13,     0,    -1,    14,     8,    -1,     5,     6,    17,     9,
       15,    10,     7,     9,    16,    10,    -1,     5,     6,    17,
        7,     9,    16,    10,    -1,     3,    11,    15,    -1,     3,
-      -1,     3,    11,    16,    -1,     3,    -1,     3,    -1
+      -1,     3,    11,    16,    -1,     4,    11,    16,    -1,     3,
+      -1,     4,    -1,     3,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    13,    13,    19,    26,    29,    30,    33,    34,    37
+       0,    14,    14,    20,    27,    30,    31,    34,    35,    36,
+      37,    40
 };
 #endif
 
@@ -445,13 +448,15 @@ static const yytype_uint16 yytoknum[] =
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    12,    13,    14,    14,    15,    15,    16,    16,    17
+       0,    12,    13,    14,    14,    15,    15,    16,    16,    16,
+      16,    17
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     2,    10,     7,     3,     1,     3,     1,     1
+       0,     2,     2,    10,     7,     3,     1,     3,     3,     1,
+       1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -459,31 +464,31 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     0,     0,     1,     2,     9,     0,     0,
-       0,     0,     6,     0,     8,     0,     0,     0,     0,     4,
-       5,     0,     7,     0,     0,     3
+       0,     0,     0,     0,     0,     1,     2,    11,     0,     0,
+       0,     0,     6,     0,     9,    10,     0,     0,     0,     0,
+       0,     4,     5,     0,     7,     8,     0,     0,     3
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,    13,    15,     8
+      -1,     2,     3,    13,    16,     8
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -19
+#define YYPACT_NINF -20
 static const yytype_int8 yypact[] =
 {
-      -3,    -2,     6,    -1,     5,   -19,   -19,   -19,    -6,     0,
-       7,     8,     1,     3,     4,     9,     7,    10,     8,   -19,
-     -19,    11,   -19,     8,    12,   -19
+      -2,     3,     8,     4,     7,   -20,   -20,   -20,    -5,     5,
+      10,     2,     0,     6,     9,    11,    13,    10,    12,     2,
+       2,   -20,   -20,    15,   -20,   -20,     2,    16,   -20
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -19,   -19,   -19,     2,   -18,   -19
+     -20,   -20,   -20,     1,   -19,   -20
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -493,16 +498,16 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      22,     9,     1,    10,     4,    24,     5,     6,     7,    11,
-      12,    14,    16,    17,     0,    18,     0,    21,    20,    19,
-      23,     0,    25
+      24,    25,     9,     1,    10,    14,    15,    27,     5,     4,
+       7,    17,     6,    12,    11,     0,    18,     0,    22,    23,
+      19,     0,    20,    21,    26,     0,    28
 };
 
 static const yytype_int8 yycheck[] =
 {
-      18,     7,     5,     9,     6,    23,     0,     8,     3,     9,
-       3,     3,    11,    10,    -1,    11,    -1,     7,    16,    10,
-       9,    -1,    10
+      19,    20,     7,     5,     9,     3,     4,    26,     0,     6,
+       3,    11,     8,     3,     9,    -1,    10,    -1,    17,     7,
+      11,    -1,    11,    10,     9,    -1,    10
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -510,8 +515,8 @@ static const yytype_int8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,     5,    13,    14,     6,     0,     8,     3,    17,     7,
-       9,     9,     3,    15,     3,    16,    11,    10,    11,    10,
-      15,     7,    16,     9,    16,    10
+       9,     9,     3,    15,     3,     4,    16,    11,    10,    11,
+      11,    10,    15,     7,    16,    16,     9,    16,    10
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1325,7 +1330,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 13 "sql.y"
+#line 14 "sql.y"
     {    
                             printf("QUERY ACCEPTED");
                             exit(0);
@@ -1335,7 +1340,7 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 20 "sql.y"
+#line 21 "sql.y"
     {
                             if(valueCount != columnCount) {
                                 printf("Invalid SQL Statement\nERROR : Mismatching LENGTH of Attributes and Values\n");
@@ -1347,35 +1352,49 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 29 "sql.y"
+#line 30 "sql.y"
     {columnCount++;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 30 "sql.y"
+#line 31 "sql.y"
     {columnCount++;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 33 "sql.y"
+#line 34 "sql.y"
     {valueCount++;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 34 "sql.y"
+#line 35 "sql.y"
+    {valueCount++;}
+    break;
+
+  case 9:
+
+/* Line 1455 of yacc.c  */
+#line 36 "sql.y"
+    {valueCount++;}
+    break;
+
+  case 10:
+
+/* Line 1455 of yacc.c  */
+#line 37 "sql.y"
     {valueCount++;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1379 "y.tab.c"
+#line 1398 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1587,7 +1606,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 38 "sql.y"
+#line 41 "sql.y"
 
 
 int yyerror (const char *str) {
@@ -1597,7 +1616,7 @@ int yyerror (const char *str) {
 
 int main()
 {
-    printf("Enter the Insert Query:");
+    printf("Enter the Insert Query:\n");
     yyparse();
 }
  

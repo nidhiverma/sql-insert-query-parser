@@ -7,6 +7,7 @@
 %}
 
 %token ID NUM INSERT INTO VALUES
+%left ID NUM
  
 %%
  
@@ -26,12 +27,14 @@ ST1             : INSERT INTO table '(' attributeList ')' VALUES '(' valuesList 
                 | INSERT INTO table VALUES '(' valuesList ')' 
                 ;
 
-attributeList   :    ID','attributeList     {columnCount++;}    
+attributeList   :    ID ',' attributeList   {columnCount++;}    
                 |    ID                     {columnCount++;}
                 ;
 
 valuesList      :    ID ',' valuesList      {valueCount++;}
+                |    NUM ',' valuesList     {valueCount++;}
                 |    ID                     {valueCount++;}
+                |    NUM                    {valueCount++;}
                 ;
 
 table           : ID;
