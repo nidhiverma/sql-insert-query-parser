@@ -43,7 +43,8 @@
      NUM = 259,
      INSERT = 260,
      INTO = 261,
-     VALUES = 262
+     VALUES = 262,
+     KEYWORD = 263
    };
 #endif
 /* Tokens.  */
@@ -52,6 +53,7 @@
 #define INSERT 260
 #define INTO 261
 #define VALUES 262
+#define KEYWORD 263
 
 
 

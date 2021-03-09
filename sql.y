@@ -45,7 +45,7 @@ int yyerror (const char *str) {
     exit(1);
 }
 
-int main()
+int main() 
 {
     printf("Enter the Insert Query:\n");
     yyparse();
