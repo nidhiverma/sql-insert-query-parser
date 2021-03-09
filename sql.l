@@ -4,7 +4,7 @@
 %}
  
 alpha [A-Za-z]
-digit [0-9]
+digit [0-9]+(.[0-9]+)?
 
 %% 
 [ \t\n]
