@@ -30,8 +30,7 @@ attributeList   :    ID','attributeList     {columnCount++;}
                 |    ID                     {columnCount++;}
                 ;
 
-valuesList      :    valueList ',' valuesList     
-                |    '\''ID'\''             {valueCount++;}
+valuesList      :    ID ',' valuesList      {valueCount++;}
                 |    ID                     {valueCount++;}
                 ;
 
@@ -45,7 +44,7 @@ int yyerror (const char *str) {
 
 int main()
 {
-    printf("Enter the Insert Query:");
+    printf("Enter the Insert Query:\n");
     yyparse();
 }
  
