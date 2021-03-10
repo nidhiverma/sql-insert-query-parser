@@ -1,0 +1,38 @@
+// VALID STATEMENTS
+
+test case #1: all lowercase
+insert into emp (ssn, fname, joining, address, location) values (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+test case #2: all uppercase
+INSERT INTO emp (ssn, fname, joining, address, location) VALUES (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+test case #3: mixed lowercase and uppercase
+inSert inTO emp (ssn, fname, joining, address, location) VaLues (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+test case #4: without column names
+insert into emp values (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+
+
+// INVALID STATEMENTS
+
+test case #5: attributes length != values length
+insert into emp (ssn, fname, joining) values (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+test case #6: one or more parenthesis missing
+insert into emp (ssn, fname, joining, address, location values (132, "Jane", 21-12-2020, "21B,SocialStreet", "Nevada";
+
+test case #7: table name missing
+insert into (ssn, fname, location) values (323, "Jane", "Nevada");
+
+
+
+// LIMITATION: WRONGLY REJECTED
+
+test case #8: valid but not giving correct result
+insert into emp (ssn, name, joining, address, location) values (132, "Jane Doe", 21-12-2020, "21B,SocialStreet", "Nevada");
+
+Details: Spaces withing a string literal is not matched by the lexical analyzer.
+
+
+

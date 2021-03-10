@@ -1,16 +1,20 @@
-//yacc file
- 
+/* Parser for SQL Insert Statement */
+
 %{
     #include <stdio.h>
     #include <stdlib.h>
     int columnCount = 0, valueCount = 0;
 %}
 
-%token ID NUM INSERT INTO VALUES
+%token ID 
+%token NUM 
+%token INSERT 
+%token INTO 
+%token VALUES
+
 %left ID NUM
  
 %%
- 
 S               : ST1';'{    
                             printf("QUERY ACCEPTED");
                             exit(0);
@@ -20,7 +24,7 @@ S               : ST1';'{
 ST1             : INSERT INTO table '(' attributeList ')' VALUES '(' valuesList ')' 
                     {
                             if(valueCount != columnCount) {
-                                printf("Invalid SQL Statement\nERROR : Mismatching LENGTH of Attributes and Values\n");
+                                printf("QUERY REJECTED!\nERROR : Mismatching LENGTH of Attributes and Values\n");
                                 return 0;
                             }
                     }               
@@ -41,7 +45,7 @@ table           : ID;
 %%
 
 int yyerror (const char *str) {
-    fprintf(stderr, "error: %s\n", str);
+    printf("QUERY REJECTED");
     exit(1);
 }
 

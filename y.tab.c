@@ -419,8 +419,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    14,    14,    20,    27,    30,    31,    34,    35,    36,
-      37,    40
+       0,    13,    13,    19,    26,    29,    30,    33,    34,    35,
+      36,    39
 };
 #endif
 
@@ -1330,7 +1330,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 14 "sql.y"
+#line 13 "sql.y"
     {    
                             printf("QUERY ACCEPTED");
                             exit(0);
@@ -1340,10 +1340,10 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 21 "sql.y"
+#line 20 "sql.y"
     {
                             if(valueCount != columnCount) {
-                                printf("Invalid SQL Statement\nERROR : Mismatching LENGTH of Attributes and Values\n");
+                                printf("QUERY REJECTED!\nERROR : Mismatching LENGTH of Attributes and Values\n");
                                 return 0;
                             }
                     }
@@ -1352,42 +1352,42 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 30 "sql.y"
+#line 29 "sql.y"
     {columnCount++;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 31 "sql.y"
+#line 30 "sql.y"
     {columnCount++;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 34 "sql.y"
+#line 33 "sql.y"
     {valueCount++;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 35 "sql.y"
+#line 34 "sql.y"
     {valueCount++;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 36 "sql.y"
+#line 35 "sql.y"
     {valueCount++;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 37 "sql.y"
+#line 36 "sql.y"
     {valueCount++;}
     break;
 
@@ -1606,11 +1606,11 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 41 "sql.y"
+#line 40 "sql.y"
 
 
 int yyerror (const char *str) {
-    fprintf(stderr, "error: %s\n", str);
+    printf("QUERY REJECTED");
     exit(1);
 }
 
