@@ -8,7 +8,7 @@
 
 alpha [A-Za-z]
 digit [0-9]+(.[0-9]+)?
-symbols ['\-_@#\.]
+symbols ['\-_@#\.\/\?]
 
 /* rules section */
 %% 
