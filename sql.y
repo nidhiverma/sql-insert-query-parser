@@ -11,8 +11,6 @@
 %token INSERT 
 %token INTO 
 %token VALUES
-
-%left ID NUM
  
 %%
 S               : ST1';'{    
